@@ -70,11 +70,18 @@ let getAllUsers = (userId) => {
     try {
       let users = "";
       if (userId === "ALL") {
-        users = await db.User.findAll({});
+        users = await db.User.findAll({
+            attributes:{
+                exclude: ['password']
+            }
+        });
       }
       if (userId && userId !== "ALL") {
         users = await db.User.findOne({
           where: { id: userId },
+          attributes: {
+            exclude: ['password']
+          }
         });
       }
 

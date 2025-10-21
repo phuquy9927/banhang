@@ -5,7 +5,11 @@
     "database": "banhang",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "loggin": false
+    "loggin": false,
+    "query": {
+      "raw": true 
+    },
+    "timezone": "+07:00"
   },
   "test": {
     "username": "root",
