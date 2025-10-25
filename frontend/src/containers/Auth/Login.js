@@ -108,7 +108,7 @@ class Login extends Component {
                   }}
                 >
                   <i
-                    class={
+                    className={
                       this.state.isShowPassword
                         ? "far fa-eye"
                         : "fas fa-eye-slash"
@@ -117,7 +117,7 @@ class Login extends Component {
                 </span>
               </div>
             </div>
-            <div col-12>
+            <div className="col-12">
               <button
                 className="btn-login"
                 onClick={() => {

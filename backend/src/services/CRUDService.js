@@ -13,8 +13,7 @@ let createNewUser = async (data) => {
             await db.User.create({
                 email: data.email,
                 password: hashPasswordFromBcrypt,
-                firstName: data.firstName,
-                lastName: data.lastName,
+                full_name: data.full_name,
                 address: data.address,
                 phonenumber: data.phonenumber,
                 gender: data.gender === '1' ? true : false,
@@ -84,8 +83,8 @@ return new Promise(async(resolve, reject) => {
             where: { id: data.id }
         })
         if(user){
-            user.firstName = data.firstName;
-            user.lastName = data.lastName;
+            user.full_name = data.full_name;
+           
             user.address = data.address;
 
             await user.save();
